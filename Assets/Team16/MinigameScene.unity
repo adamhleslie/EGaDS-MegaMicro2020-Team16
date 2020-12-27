@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b60a121ced77f428b1898416aac58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugGameOnly: 0
+  debugGameOnly: 1
   minigame: {fileID: 11400000, guid: 08fb96c17603cd54abc4a6539195d719, type: 2}
 --- !u!4 &215339488
 Transform:
@@ -780,7 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIText: {fileID: 724795983}
-  startText: Press space to win
+  startText: Press X
   winText: You win!!!
 --- !u!4 &2050331914
 Transform:

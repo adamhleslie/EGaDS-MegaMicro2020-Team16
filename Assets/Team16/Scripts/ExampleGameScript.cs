@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TEAM_NAME_SPACE{
+namespace TEAM_NAME_SPACE
+{
     public class ExampleGameScript : MonoBehaviour
     {
         // DELETE THIS FILE BEFORE YOU SUBMIT //
@@ -20,15 +21,16 @@ namespace TEAM_NAME_SPACE{
 
         private void Update()
         {
-            if (Input.GetButtonDown("Space"))
-            {
-                if (!MinigameManager.Instance.minigame.gameWin)
-                {
-                    MinigameManager.Instance.minigame.gameWin = true;
-                    UIText.text = winText;
-                    MinigameManager.Instance.PlaySound("win");
-                }
-            }
-        }
+
+			if (Input.GetButtonDown("Space"))
+			{
+				if (!MinigameManager.Instance.minigame.gameWin)
+				{
+					MinigameManager.Instance.minigame.gameWin = true;
+					UIText.text = winText;
+					MinigameManager.Instance.PlaySound("win");
+				}
+			}
+		}
     }
 }
