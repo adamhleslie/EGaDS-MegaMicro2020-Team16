@@ -8,13 +8,19 @@ public class ChoppableObjectCollection : ScriptableObject
 	private ChoppableObject[] _choppableObjects;
 
 	// TODO: Need to make this randomized!
-	public ChoppableObject[] GetRandomUnique()
+	public List<ChoppableObject> GetRandomUnique(int sizeRequested)
 	{
 		if (_choppableObjects.Length == 0) {
 			return null;
         }
+		
+		List<ChoppableObject> listOfIndexes = new List<ChoppableObject>();
+		
+		for (int startIndex = 0; startIndex < sizeRequested; startIndex++)
+        {
+			listOfIndexes.Add(_choppableObjects[Random.Range(0, _choppableObjects.Length)]); 
+        }
 
-		int randomIndex = Random.Range(0, _choppableObjects.Length);
-		return new ChoppableObject[] { _choppableObjects[randomIndex] };
+		return listOfIndexes;
 	}
 }
