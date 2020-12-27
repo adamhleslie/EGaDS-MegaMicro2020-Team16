@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566c114437bbce34baaf7d5084239ecf, type: 3}
-  m_Name: Test
+  m_Script: {fileID: 11500000, guid: d2f24d35f219d9e42ab80f7b9dd93521, type: 3}
+  m_Name: zUsed Objects
   m_EditorClassIdentifier: 
-  _shouldBeChopped: 1
-  _beforeChop: {fileID: 2800000, guid: dfffa78d25c6f074d9501f9282c96fce, type: 3}
-  _afterChop: {fileID: 2800000, guid: c29438f6f487fb34397d4afec86ea22c, type: 3}
+  _choppableObjects:
+  - {fileID: 11400000, guid: 6c7076d3af6460d409c49572ca3880fd, type: 2}
