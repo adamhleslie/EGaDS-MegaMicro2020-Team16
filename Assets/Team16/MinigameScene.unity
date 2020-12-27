@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b60a121ced77f428b1898416aac58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugGameOnly: 1
+  debugGameOnly: 0
   minigame: {fileID: 11400000, guid: 08fb96c17603cd54abc4a6539195d719, type: 2}
 --- !u!4 &215339488
 Transform:
@@ -983,3 +983,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choppableObjects: {fileID: 11400000, guid: 65e1c30234137bc45925cea5da0e2cd7, type: 2}
   _timerLength: 2
+  _choppableImage: {fileID: 451443548}

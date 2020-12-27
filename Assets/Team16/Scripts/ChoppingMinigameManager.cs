@@ -1,17 +1,23 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Team16
 {
-    public class ChoppingMinigameManager : MonoBehaviour
-    {
+	public class ChoppingMinigameManager : MonoBehaviour
+	{
 		[SerializeField]
 		private ChoppableObjectCollection _choppableObjects;
 		[SerializeField]
 		private float _timerLength;
+		[SerializeField]
+		private float _transitionTimerLength;
+		[SerializeField]
+		private Image _choppableImage;
 
+		private bool _waitingForInput;
 		private ChoppableObject[] _usedObjects;
+		private int _currentIndex;
 
 		void Start()
 		{
@@ -27,13 +33,87 @@ namespace Team16
 				Debug.Log($"Choppable object: {choppableObject.name}");
 			}
 
+			_currentIndex = 0;
+			DisplayChoppableObject(_usedObjects[_currentIndex], false);
+			_waitingForInput = true;
 			StartCoroutine(TimerCoroutine());
+		}
+
+		void Update()
+		{
+			if (_waitingForInput && Input.GetButtonDown("Space"))
+			{
+				_waitingForInput = false;
+				if (_usedObjects[_currentIndex].ShouldBeChopped)
+				{
+					// Handle success!
+					MinigameManager.Instance.minigame.gameWin = true;
+				}
+				else
+				{
+					// Handle failure!
+					MinigameManager.Instance.minigame.gameWin = false;
+				}
+
+				// Stop the timer
+				StopAllCoroutines();
+				DisplayChoppableObject(_usedObjects[_currentIndex], true);
+				StartCoroutine(TransitionTimerCoroutine());
+			}
 		}
 
 		private IEnumerator TimerCoroutine()
 		{
 			yield return new WaitForSeconds(_timerLength);
-			Debug.Log($"{_timerLength}s have passed");
+
+			_waitingForInput = false;
+			if (!_usedObjects[_currentIndex].ShouldBeChopped)
+			{
+				// Handle success!
+				MinigameManager.Instance.minigame.gameWin = true;
+			}
+			else
+			{
+				// Handle failure!
+				MinigameManager.Instance.minigame.gameWin = false;
+			}
+
+			StartCoroutine(TransitionTimerCoroutine());
+		}
+
+		// TODO: Update to show effects
+		private IEnumerator TransitionTimerCoroutine()
+		{
+			yield return new WaitForSeconds(_transitionTimerLength);
+			Next();
+		}
+
+		private void Next()
+		{
+			// Add support for multiple objects
+			++_currentIndex;
+			if (_currentIndex >= _usedObjects.Length)
+			{
+				Debug.Log("Reached end of used objects");
+				return;
+			}
+
+			/// TODO: Visuals of cutting board sliding in etc.
+			DisplayChoppableObject(_usedObjects[_currentIndex], false);
+			_waitingForInput = true;
+			StartCoroutine(TimerCoroutine());
+		}
+
+		private void DisplayChoppableObject(ChoppableObject choppableObject, bool chopped)
+		{
+			if (chopped)
+			{
+				_choppableImage.sprite = choppableObject.AfterChop;
+			}
+			else
+			{
+				_choppableImage.sprite = choppableObject.BeforeChop;
+			}
 		}
 	}
 }
