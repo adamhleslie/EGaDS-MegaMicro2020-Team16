@@ -8,6 +8,7 @@ public class ChoppableObjectCollection : ScriptableObject
 	private ChoppableObject[] _choppableObjects;
 
 	// TODO: Need to make this randomized!
+	// TODO: COMPLETED.
 	public List<ChoppableObject> GetRandomUnique(int sizeRequested)
 	{
 		if (_choppableObjects.Length == 0) {
