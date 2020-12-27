@@ -10,6 +10,11 @@ public class ChoppableObjectCollection : ScriptableObject
 	// TODO: Need to make this randomized!
 	public ChoppableObject[] GetRandomUnique()
 	{
-		return new ChoppableObject[] { _choppableObjects[0] };
+		if (_choppableObjects.Length == 0) {
+			return null;
+        }
+
+		int randomIndex = Random.Range(0, _choppableObjects.Length);
+		return new ChoppableObject[] { _choppableObjects[randomIndex] };
 	}
 }
