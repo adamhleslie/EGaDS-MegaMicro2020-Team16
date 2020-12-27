@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choppableObjects:
   - {fileID: 11400000, guid: 6c7076d3af6460d409c49572ca3880fd, type: 2}
+  - {fileID: 11400000, guid: c9c82940baddb9f4a91f593b23b70991, type: 2}
+  - {fileID: 11400000, guid: ba236dcfea6f8b2419d74dae188a3962, type: 2}

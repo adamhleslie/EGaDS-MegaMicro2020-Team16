@@ -945,7 +945,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050331914}
-  - component: {fileID: 2050331913}
   - component: {fileID: 2050331915}
   m_Layer: 0
   m_Name: Minigame
@@ -954,21 +953,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2050331913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050331912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 320a75bdc860cc04fa42675cebbe417f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UIText: {fileID: 724795983}
-  startText: Press X
-  winText: You win!!!
 --- !u!4 &2050331914
 Transform:
   m_ObjectHideFlags: 0
@@ -998,3 +982,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _choppableObjects: {fileID: 11400000, guid: 65e1c30234137bc45925cea5da0e2cd7, type: 2}
+  _timerLength: 2
