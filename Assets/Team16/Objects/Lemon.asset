@@ -15,3 +15,4 @@ MonoBehaviour:
   _shouldBeChopped: 1
   _beforeChop: {fileID: 21300000, guid: 71f1039ac65ad6241a4d017c171b79f9, type: 3}
   _afterChop: {fileID: 21300000, guid: b1c2c236f0d3c7441a5471c9ff0b9e76, type: 3}
+  _helperText: []

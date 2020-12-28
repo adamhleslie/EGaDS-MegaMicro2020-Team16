@@ -27,4 +27,28 @@ MonoBehaviour:
     minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
-  gameWin: 0
+  - soundName: chop_1
+    clip: {fileID: 8300000, guid: 87a5ba55507a4bc479c717d1f9107463, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: chop_2
+    clip: {fileID: 8300000, guid: 5fa5bc57b9430ae4196666cf153fd0fb, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: chop_3
+    clip: {fileID: 8300000, guid: 142d7323ec607e34fa7df8712a5ef577, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: chop_4
+    clip: {fileID: 8300000, guid: 493f6b35484b6424cb7f25bf98638d07, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  gameWin: 1

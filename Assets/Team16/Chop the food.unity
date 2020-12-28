@@ -1917,6 +1917,11 @@ MonoBehaviour:
   _knifeFadeLength: 0.1
   _choppableHolderAnimation: {fileID: 423807916}
   _knifeAnimation: {fileID: 1994635296}
+  _chopSounds:
+  - chop_1
+  - chop_2
+  - chop_3
+  - chop_4
   _onTransitionStart:
     m_PersistentCalls:
       m_Calls: []

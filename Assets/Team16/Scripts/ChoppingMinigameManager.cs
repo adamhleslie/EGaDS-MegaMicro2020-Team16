@@ -36,6 +36,8 @@ namespace Team16
 		private Animation _choppableHolderAnimation;
 		[SerializeField]
 		private Animation _knifeAnimation;
+		[SerializeField]
+		private string[] _chopSounds;
 
 		[SerializeField]
 		private UnityEvent _onTransitionStart;
@@ -184,6 +186,7 @@ namespace Team16
 		{
 			_onChopEnd?.Invoke();
 			DisplayChoppableObject(_usedObjects[_currentIndex], true);
+			PlayRandomSound(_chopSounds);
 		}
 
 		private void OnSuccess()
@@ -225,6 +228,14 @@ namespace Team16
 		{
 			_waitingForInput = true;
 			StartCoroutine(TimerCoroutine());
+		}
+
+		private void PlayRandomSound(string[] sounds)
+		{
+			if (sounds.Length > 0)
+			{
+				MinigameManager.Instance.PlaySound(sounds[Random.Range(0, sounds.Length)]);
+			}
 		}
 
 		private void DisplayChoppableObject(ChoppableObject choppableObject, bool chopped)
