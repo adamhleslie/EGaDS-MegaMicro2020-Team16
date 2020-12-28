@@ -17,6 +17,8 @@ namespace Team16
 		[SerializeField]
 		private HelperText _helperText;
 		[SerializeField]
+		private TimerVisual _timerVisual;
+		[SerializeField]
 		private ChoppableObjectCollection _choppableObjects;
 		[SerializeField]
 		private int _numberOfChoppables;
@@ -38,6 +40,8 @@ namespace Team16
 		private Animation _knifeAnimation;
 		[SerializeField]
 		private string[] _chopSounds;
+		[SerializeField]
+		private string[] _winSounds;
 		[SerializeField]
 		private ChoppableObject _beeObject;
 
@@ -82,16 +86,22 @@ namespace Team16
 			{
 				_waitingForInput = false;
 
-				// Stop the timer coroutine
+				// Stop the timer coroutine and visuals
 				StopAllCoroutines();
+				_timerVisual.StopTimer();
+
 				StartCoroutine(ChopCoroutine());
 			}
 		}
 
-		private IEnumerator TimerCoroutine()
+		private void StartPlay()
 		{
-			yield return new WaitForSeconds(_timerLength);
+			_waitingForInput = true;
+			_timerVisual.StartTimer(_timerLength, OnTimerComplete);
+		}
 
+		private void OnTimerComplete()
+		{
 			_waitingForInput = false;
 			if (!_usedObjects[_currentIndex].ShouldBeChopped)
 			{
@@ -162,6 +172,7 @@ namespace Team16
 		#region Visuals
 		private void OnTransitionStart()
 		{
+			_timerVisual.ClearFill();
 			_helperText.SetTextActive(false);
 			_debugText.text = "";
 			_onTransitionStart?.Invoke();
@@ -212,7 +223,7 @@ namespace Team16
 		{
 			_debugText.text = "WON!";
 			_onWin?.Invoke();
-			MinigameManager.Instance.PlaySound("win");
+			PlayRandomSound(_winSounds);
 		}
 		#endregion
 
@@ -227,12 +238,6 @@ namespace Team16
 
 			DisplayChoppableObject(_usedObjects[_currentIndex], false);
 			_choppableText.text = _usedObjects[_currentIndex].name;
-		}
-
-		private void StartPlay()
-		{
-			_waitingForInput = true;
-			StartCoroutine(TimerCoroutine());
 		}
 
 		private void PlayRandomSound(string[] sounds)
@@ -256,6 +261,11 @@ namespace Team16
 					image.sprite = choppableObject.BeforeChop;
 				}
 			}
+		}
+
+		public void PlaySound(string name)
+		{
+			MinigameManager.Instance.PlaySound(name);
 		}
 	}
 }

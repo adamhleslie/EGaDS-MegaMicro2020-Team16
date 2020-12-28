@@ -15,8 +15,26 @@ MonoBehaviour:
   gameTime: 1
   music: {fileID: 8300000, guid: f95d1911c04a0374786eb5491e1655fb, type: 3}
   sounds:
-  - soundName: win
-    clip: {fileID: 8300000, guid: 3b805ebd525b7f141b9776180dfd3721, type: 3}
+  - soundName: win_1
+    clip: {fileID: 8300000, guid: 126ae65ba09e19a42bd8dba4be44c2b3, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: win_2
+    clip: {fileID: 8300000, guid: 104c64e084efd2b44a3f14d63b342120, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: win_3
+    clip: {fileID: 8300000, guid: f3f3dfc894c2edd41863f8f55581daba, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: win_4
+    clip: {fileID: 8300000, guid: 4f92f2b0360fe194dbc91aeff52ff350, type: 3}
     volume: 1
     minPitch: 1
     maxPitch: 1
@@ -51,4 +69,10 @@ MonoBehaviour:
     minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
-  gameWin: 0
+  - soundName: swarm
+    clip: {fileID: 8300000, guid: 586bf94d471b17443a310653c93c3bdb, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  gameWin: 1
