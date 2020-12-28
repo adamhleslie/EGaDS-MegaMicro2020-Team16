@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10b6289b71b71e942a2499ed4eb71c02, type: 3}
-  m_Name: Minigame
+  m_Name: ChopTheFood
   m_EditorClassIdentifier: 
   gameTime: 1
   music: {fileID: 8300000, guid: f95d1911c04a0374786eb5491e1655fb, type: 3}
@@ -28,25 +28,25 @@ MonoBehaviour:
     maxPitch: 1
     source: {fileID: 0}
   - soundName: chop_1
-    clip: {fileID: 8300000, guid: 87a5ba55507a4bc479c717d1f9107463, type: 3}
+    clip: {fileID: 8300000, guid: a866f1139d37cb7479e92f9af7069caa, type: 3}
     volume: 1
     minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
   - soundName: chop_2
-    clip: {fileID: 8300000, guid: 5fa5bc57b9430ae4196666cf153fd0fb, type: 3}
+    clip: {fileID: 8300000, guid: 29d73ac06d1c25449b77611b053740fd, type: 3}
     volume: 1
     minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
   - soundName: chop_3
-    clip: {fileID: 8300000, guid: 142d7323ec607e34fa7df8712a5ef577, type: 3}
+    clip: {fileID: 8300000, guid: aad40f24735b58d49b5431fc9a25a3b3, type: 3}
     volume: 1
     minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
   - soundName: chop_4
-    clip: {fileID: 8300000, guid: 493f6b35484b6424cb7f25bf98638d07, type: 3}
+    clip: {fileID: 8300000, guid: 8318f39e2c45ed742ad552c281cbc150, type: 3}
     volume: 1
     minPitch: 1
     maxPitch: 1
