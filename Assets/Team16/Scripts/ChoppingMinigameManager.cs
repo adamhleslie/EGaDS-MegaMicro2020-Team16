@@ -55,6 +55,8 @@ namespace Team16
 		private UnityEvent _onSuccess;
 		[SerializeField]
 		private UnityEvent _onFailure;
+		[SerializeField]
+		private UnityEvent _onWin;
 
 		private bool _waitingForInput;
 		private List<ChoppableObject> _usedObjects;
@@ -209,6 +211,7 @@ namespace Team16
 		private void OnWin()
 		{
 			_debugText.text = "WON!";
+			_onWin?.Invoke();
 			MinigameManager.Instance.PlaySound("win");
 		}
 		#endregion
