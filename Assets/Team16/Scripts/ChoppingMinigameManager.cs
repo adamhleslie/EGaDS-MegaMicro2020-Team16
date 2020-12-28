@@ -15,6 +15,10 @@ namespace Team16
 		[SerializeField]
 		private Text _debugText;
 		[SerializeField]
+		private GameObject _loseTextRoot;
+		[SerializeField]
+		private Text _loseText;
+		[SerializeField]
 		private HelperText _helperText;
 		[SerializeField]
 		private TimerVisual _timerVisual;
@@ -44,6 +48,8 @@ namespace Team16
 		private string[] _winSounds;
 		[SerializeField]
 		private ChoppableObject _beeObject;
+		[SerializeField]
+		private string _defaultLoseText;
 
 		[SerializeField]
 		private UnityEvent _onTransitionStart;
@@ -216,7 +222,29 @@ namespace Team16
 			_debugText.text = "Failure";
 			_onFailure?.Invoke();
 			MinigameManager.Instance.minigame.gameWin = false;
-			MinigameManager.Instance.PlaySound("lose");
+
+			string loseText;
+			if (!string.IsNullOrWhiteSpace(_usedObjects[_currentIndex].CustomLoseText))
+			{
+				loseText = _usedObjects[_currentIndex].CustomLoseText;
+			}
+			else
+			{
+				loseText = _defaultLoseText;
+			}
+			_loseText.text = loseText;
+			_loseTextRoot.SetActive(true);
+
+			string loseSound;
+			if (!string.IsNullOrWhiteSpace(_usedObjects[_currentIndex].CustomLoseSound))
+			{
+				loseSound = _usedObjects[_currentIndex].CustomLoseSound;
+			}
+			else
+			{
+				loseSound = "lose";
+			}
+			MinigameManager.Instance.PlaySound(loseSound);
 		}
 
 		private void OnWin()

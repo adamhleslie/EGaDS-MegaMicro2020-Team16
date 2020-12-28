@@ -1112,7 +1112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: -32, y: 40}
   m_SizeDelta: {x: 1082, y: 676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &423807916
@@ -2214,7 +2214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 96}
+  m_AnchoredPosition: {x: -32, y: 96}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033996499
@@ -2339,7 +2339,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BEES!
+  m_Text: No!
 --- !u!222 &1047148881
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3060,8 +3060,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.18300001, y: -1.6700001, z: 13.30185}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 23.2}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &1859085667
 Animation:
@@ -3074,7 +3074,7 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 331eefb8b8f5bf84096a80c3e3702d74, type: 2}
+  - {fileID: 7400000, guid: 694831b6c3115134b90bbd06789f53ee, type: 2}
   - {fileID: 7400000, guid: 4fa3bbfde0ed6854c93128010d79f75a, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
@@ -3221,10 +3221,10 @@ RectTransform:
   m_Father: {fileID: 1859085666}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32, y: 43}
-  m_SizeDelta: {x: 500, y: 500}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1921752454
 MonoBehaviour:
@@ -3297,7 +3297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 223, y: 214}
+  m_AnchoredPosition: {x: 191, y: 214}
   m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &1994635296
@@ -3367,6 +3367,8 @@ MonoBehaviour:
   - {fileID: 451443548}
   _choppableText: {fileID: 724795983}
   _debugText: {fileID: 176157730}
+  _loseTextRoot: {fileID: 340662887}
+  _loseText: {fileID: 1047148880}
   _helperText: {fileID: 1033996499}
   _timerVisual: {fileID: 367540040}
   _choppableObjects: {fileID: 11400000, guid: 65e1c30234137bc45925cea5da0e2cd7, type: 2}
@@ -3390,6 +3392,7 @@ MonoBehaviour:
   - win_3
   - win_4
   _beeObject: {fileID: 11400000, guid: ba236dcfea6f8b2419d74dae188a3962, type: 2}
+  _defaultLoseText: No!
   _onTransitionStart:
     m_PersistentCalls:
       m_Calls: []
@@ -3426,28 +3429,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 340662887}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2050331915}
-        m_MethodName: PlaySound
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: swarm
-          m_BoolArgument: 1
         m_CallState: 2
   _onSuccess:
     m_PersistentCalls:

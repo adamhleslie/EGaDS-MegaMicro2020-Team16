@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ChoppableHolder_Entering
+  m_Name: Text_Entering
   serializedVersion: 6
   m_Legacy: 1
   m_Compressed: 0
@@ -23,15 +23,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 1065
-        inSlope: -4388
-        outSlope: -4388
+        inSlope: -4260
+        outSlope: -4260
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: -32
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -81,15 +81,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 1065
-        inSlope: -4388
-        outSlope: -4388
+        inSlope: -4260
+        outSlope: -4260
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: -32
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136

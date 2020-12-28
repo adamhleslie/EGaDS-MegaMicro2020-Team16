@@ -40,7 +40,7 @@ MonoBehaviour:
     maxPitch: 1
     source: {fileID: 0}
   - soundName: lose
-    clip: {fileID: 8300000, guid: 939f76ea96b84ef479e3b8a968676c0e, type: 3}
+    clip: {fileID: 8300000, guid: e2400c9398a46884091b4ebf9a93f09c, type: 3}
     volume: 1
     minPitch: 1
     maxPitch: 1

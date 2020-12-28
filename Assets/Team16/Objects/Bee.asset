@@ -18,3 +18,5 @@ MonoBehaviour:
   _helperText:
   - Save the bees!
   - Don't hurt bees!
+  _customLoseSound: swarm
+  _customLoseText: BEES!

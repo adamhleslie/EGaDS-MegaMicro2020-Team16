@@ -12,7 +12,7 @@ namespace Team16
         void Awake()
         {
             Animation animation = GetComponent<Animation>();
-            animation.Play("ChoppableHolder_Entering");
+            animation.Play("Text_Entering");
 
             if (_crazyText)
             {

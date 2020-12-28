@@ -49,20 +49,17 @@ namespace Team16
 			{
 				_currentTime += Time.deltaTime;
 
-				float fillValue;
 				if (_currentTime >= _length)
 				{
-					fillValue = 1.0f;
+					SetFill(1.0f);
 					_active = false;
 					_onComplete?.Invoke();
 					_completeCallback?.Invoke();
 				}
 				else
 				{
-					fillValue = _currentTime / _length;
+					SetFill(_currentTime / _length);
 				}
-
-				SetFill(fillValue);
 			}
 		}
 

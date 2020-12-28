@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choppableObjects:
   - ChoppableObject: {fileID: 11400000, guid: ba236dcfea6f8b2419d74dae188a3962, type: 2}
-    Probability: 1
+    Probability: 1.5
   - ChoppableObject: {fileID: 11400000, guid: 29b0469b5376c25499ef57b408a3793a, type: 2}
     Probability: 0.5
   - ChoppableObject: {fileID: 11400000, guid: 84e3e164b6eb86447a04fa5ee5dacce8, type: 2}
