@@ -38,6 +38,8 @@ namespace Team16
 		private Animation _knifeAnimation;
 		[SerializeField]
 		private string[] _chopSounds;
+		[SerializeField]
+		private ChoppableObject _beeObject;
 
 		[SerializeField]
 		private UnityEvent _onTransitionStart;
@@ -47,6 +49,8 @@ namespace Team16
 		private UnityEvent _onChopStart;
 		[SerializeField]
 		private UnityEvent _onChopEnd;
+		[SerializeField]
+		private UnityEvent _onBeeChopped;
 		[SerializeField]
 		private UnityEvent _onSuccess;
 		[SerializeField]
@@ -180,6 +184,11 @@ namespace Team16
 			_onChopEnd?.Invoke();
 			DisplayChoppableObject(_usedObjects[_currentIndex], true);
 			PlayRandomSound(_chopSounds);
+
+			if (_usedObjects[_currentIndex] == _beeObject)
+			{
+				_onBeeChopped?.Invoke();
+			}
 		}
 
 		private void OnSuccess()
