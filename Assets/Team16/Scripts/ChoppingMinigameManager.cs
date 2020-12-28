@@ -58,7 +58,7 @@ namespace Team16
 
 		void Start()
 		{
-			_usedObjects = _choppableObjects.GetRandomUnique(_numberOfChoppables);
+			_usedObjects = _choppableObjects.GetRandom(_numberOfChoppables);
 			if ((_usedObjects == null) || (_usedObjects.Count == 0))
 			{
 				Debug.LogError("[ChoppingMinigameManager.Start] No choppable objects!");
@@ -139,14 +139,12 @@ namespace Team16
 		{
 			if (MinigameManager.Instance.minigame.gameWin == false)
 			{
-				Debug.Log($"Failed the minigame with index {_currentIndex}!");
 				return false;
 			}
 
 			++_currentIndex;
 			if (_currentIndex >= _usedObjects.Count)
 			{
-				Debug.Log($"Reached end of used objects with index {_currentIndex}");
 				OnWin();
 				return false;
 			}

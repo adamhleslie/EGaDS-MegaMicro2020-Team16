@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Team16
@@ -6,26 +7,54 @@ namespace Team16
 	[CreateAssetMenu(fileName = "New ChoppableObjectCollection", menuName = "Choppable Object Collection")]
 	public class ChoppableObjectCollection : ScriptableObject
 	{
+		[Serializable]
+		private class ChoppableObjectInternal
+		{
+			public ChoppableObject ChoppableObject;
+			public float Probability;
+		}
+
 		[SerializeField]
-		private ChoppableObject[] _choppableObjects;
+		private ChoppableObjectInternal[] _choppableObjects;
 
 		// TODO: Need to make this randomized!
 		// TODO: COMPLETED.
-		public List<ChoppableObject> GetRandomUnique(int sizeRequested)
+		public List<ChoppableObject> GetRandom(int sizeRequested)
 		{
 			if (_choppableObjects.Length == 0)
 			{
 				return null;
 			}
 
-			List<ChoppableObject> listOfIndexes = new List<ChoppableObject>();
-
+			List<ChoppableObject> choppables = new List<ChoppableObject>();
 			for (int startIndex = 0; startIndex < sizeRequested; startIndex++)
 			{
-				listOfIndexes.Add(_choppableObjects[Random.Range(0, _choppableObjects.Length)]);
+				choppables.Add(GetRandom());;
 			}
 
-			return listOfIndexes;
+			return choppables;
+		}
+
+		private ChoppableObject GetRandom()
+		{
+			float max = 0;
+			foreach (ChoppableObjectInternal choppableObject in _choppableObjects)
+			{
+				max += choppableObject.Probability;
+			}
+
+			float currentMax = 0;
+			float value = UnityEngine.Random.Range(0, max);
+			foreach (ChoppableObjectInternal choppableObject in _choppableObjects)
+			{
+				currentMax += choppableObject.Probability;
+				if (value <= currentMax)
+				{
+					return choppableObject.ChoppableObject;
+				}
+			}
+
+			return null;
 		}
 	}
 }
