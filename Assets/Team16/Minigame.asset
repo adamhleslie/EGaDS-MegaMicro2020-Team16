@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Minigame
   m_EditorClassIdentifier: 
   gameTime: 1
-  music: {fileID: 8300000, guid: efcdf0d075c96ff4d87dc64b85565f39, type: 3}
+  music: {fileID: 8300000, guid: ea98d286fd9c9ef4ab0ba8923f257fd7, type: 3}
   sounds:
   - soundName: win
     clip: {fileID: 8300000, guid: 43563de31a65b65409e47bb8f7497adc, type: 3}
@@ -21,4 +21,4 @@ MonoBehaviour:
     minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
-  gameWin: 0
+  gameWin: 1
