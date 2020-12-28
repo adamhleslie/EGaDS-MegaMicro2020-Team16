@@ -2956,6 +2956,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1145982224330941060, guid: b6836fc980d2e334daafd01704fc214b,
         type: 3}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145982224330941060, guid: b6836fc980d2e334daafd01704fc214b,
+        type: 3}
+      propertyPath: RotationModule.curve.scalar
+      value: 3.1415925
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145982224330941060, guid: b6836fc980d2e334daafd01704fc214b,
+        type: 3}
+      propertyPath: RotationBySpeedModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145982224330941060, guid: b6836fc980d2e334daafd01704fc214b,
+        type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 7
       objectReference: {fileID: 0}

@@ -16,5 +16,6 @@ MonoBehaviour:
   _beforeChop: {fileID: 21300000, guid: a981b02788caee646bdfe01889c783ae, type: 3}
   _afterChop: {fileID: 21300000, guid: 7a9d531a0cfcdd14bb00d0ef74db03ef, type: 3}
   _helperText:
+  - Zesty!
   - Yummy!
-  - WOW!
+  - Juicy!
