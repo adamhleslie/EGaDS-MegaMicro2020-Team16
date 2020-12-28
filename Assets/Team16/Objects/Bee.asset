@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bee
   m_EditorClassIdentifier: 
   _shouldBeChopped: 0
-  _beforeChop: {fileID: 21300000, guid: dfffa78d25c6f074d9501f9282c96fce, type: 3}
-  _afterChop: {fileID: 21300000, guid: c29438f6f487fb34397d4afec86ea22c, type: 3}
+  _beforeChop: {fileID: 21300000, guid: a2fc3109f58146e4b8c41ade3b6286ba, type: 3}
+  _afterChop: {fileID: 21300000, guid: a2fc3109f58146e4b8c41ade3b6286ba, type: 3}

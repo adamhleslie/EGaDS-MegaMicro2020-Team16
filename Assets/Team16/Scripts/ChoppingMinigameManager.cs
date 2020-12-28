@@ -9,7 +9,7 @@ namespace Team16
 	public class ChoppingMinigameManager : MonoBehaviour
 	{
 		[SerializeField]
-		private Image _choppableImage;
+		private Image[] _choppableImages;
 		[SerializeField]
 		private Text _choppableText;
 		[SerializeField]
@@ -21,11 +21,19 @@ namespace Team16
 		[SerializeField]
 		private float _timerLength;
 		[SerializeField]
-		private float _transitionTimerLength;
+		private float _transitionExitingLength;
+		[SerializeField]
+		private float _transitionEnteringLength;
 		[SerializeField]
 		private float _chopTimerLength;
 		[SerializeField]
+		private float _postChopTimerLength;
+		[SerializeField]
+		private float _knifeFadeLength;
+		[SerializeField]
 		private Animation _choppableHolderAnimation;
+		[SerializeField]
+		private Animation _knifeAnimation;
 
 		[SerializeField]
 		private UnityEvent _onTransitionStart;
@@ -100,6 +108,7 @@ namespace Team16
 			if (_usedObjects[_currentIndex].ShouldBeChopped)
 			{
 				OnSuccess();
+				yield return new WaitForSeconds(_postChopTimerLength);
 				StartCoroutine(TransitionCoroutine());
 			}
 			else
@@ -111,48 +120,44 @@ namespace Team16
 		private IEnumerator TransitionCoroutine()
 		{
 			OnTransitionStart();
-			yield return new WaitForSeconds(_transitionTimerLength);
-			OnTransitionEnd();
+			if (_currentIndex != -1)
+			{
+				_choppableHolderAnimation.Play("ChoppableHolder_Leaving");
+				yield return new WaitForSeconds(_transitionExitingLength);
+			}
 
-			Next();
+			if (Next())
+			{
+				_choppableHolderAnimation.Play("ChoppableHolder_Entering");
+				yield return new WaitForSeconds(_transitionEnteringLength);
+				StartPlay();
+			}
+
+			OnTransitionEnd();
 		}
 
-		private void Next()
+		private bool Next()
 		{
 			if (MinigameManager.Instance.minigame.gameWin == false)
 			{
 				Debug.Log($"Failed the minigame with index {_currentIndex}!");
-				return;
+				return false;
 			}
 
 			++_currentIndex;
 			if (_currentIndex >= _usedObjects.Count)
 			{
 				Debug.Log($"Reached end of used objects with index {_currentIndex}");
-				return;
+				return false;
 			}
 
 			UpdateChoppable();
+			return true;
 		}
 
 		#region Visuals
 		private void OnTransitionStart()
 		{
-			if (_currentIndex == -1)
-			{
-				_choppableHolderAnimation.Play("ChoppableHolder_Entering");
-			}
-			else if (_currentIndex == (_usedObjects.Count - 1))
-			{
-				_choppableHolderAnimation.Play("ChoppableHolder_Leaving");
-			}
-			else
-			{
-				_choppableHolderAnimation.Play("ChoppableHolder_Leaving");
-				// NEED TO SET THE GRAPHICS ON THE ENTERING CHOPPABLE BEFORE THE ANIMATION BEGINS
-				_choppableHolderAnimation.PlayQueued("ChoppableHolder_Entering");
-			}
-
 			_debugText.text = "";
 			_onTransitionStart?.Invoke();
 		}
@@ -165,6 +170,8 @@ namespace Team16
 
 		private void OnChopStart()
 		{
+			_knifeAnimation.CrossFade("Knife_Cut", _knifeFadeLength);
+			_knifeAnimation.CrossFadeQueued("Knife_Idle", _knifeFadeLength);
 			_debugText.text = "Chopping";
 			_onChopStart?.Invoke();
 		}
@@ -193,19 +200,26 @@ namespace Team16
 		{
 			DisplayChoppableObject(_usedObjects[_currentIndex], false);
 			_choppableText.text = _usedObjects[_currentIndex].name;
+		}
+
+		private void StartPlay()
+		{
 			_waitingForInput = true;
 			StartCoroutine(TimerCoroutine());
 		}
 
 		private void DisplayChoppableObject(ChoppableObject choppableObject, bool chopped)
 		{
-			if (chopped)
+			foreach (Image image in _choppableImages)
 			{
-				_choppableImage.sprite = choppableObject.AfterChop;
-			}
-			else
-			{
-				_choppableImage.sprite = choppableObject.BeforeChop;
+				if (chopped)
+				{
+					image.sprite = choppableObject.AfterChop;
+				}
+				else
+				{
+					image.sprite = choppableObject.BeforeChop;
+				}
 			}
 		}
 	}
