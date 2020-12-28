@@ -21,4 +21,10 @@ MonoBehaviour:
     minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
-  gameWin: 1
+  - soundName: lose
+    clip: {fileID: 8300000, guid: 939f76ea96b84ef479e3b8a968676c0e, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  gameWin: 0

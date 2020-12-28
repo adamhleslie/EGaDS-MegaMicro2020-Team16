@@ -148,6 +148,7 @@ namespace Team16
 			if (_currentIndex >= _usedObjects.Count)
 			{
 				Debug.Log($"Reached end of used objects with index {_currentIndex}");
+				OnWin();
 				return false;
 			}
 
@@ -188,11 +189,19 @@ namespace Team16
 			_onSuccess?.Invoke();
 		}
 
+		// Failure is an instant loss
 		private void OnFailure()
 		{
 			_debugText.text = "Failure";
 			_onFailure?.Invoke();
 			MinigameManager.Instance.minigame.gameWin = false;
+			MinigameManager.Instance.PlaySound("lose");
+		}
+
+		private void OnWin()
+		{
+			_debugText.text = "WON!";
+			MinigameManager.Instance.PlaySound("win");
 		}
 		#endregion
 
