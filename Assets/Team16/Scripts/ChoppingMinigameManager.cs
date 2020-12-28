@@ -24,6 +24,8 @@ namespace Team16
 		private float _transitionTimerLength;
 		[SerializeField]
 		private float _chopTimerLength;
+		[SerializeField]
+		private Animation _choppableHolderAnimation;
 
 		[SerializeField]
 		private UnityEvent _onTransitionStart;
@@ -136,6 +138,21 @@ namespace Team16
 		#region Visuals
 		private void OnTransitionStart()
 		{
+			if (_currentIndex == -1)
+			{
+				_choppableHolderAnimation.Play("ChoppableHolder_Entering");
+			}
+			else if (_currentIndex == (_usedObjects.Count - 1))
+			{
+				_choppableHolderAnimation.Play("ChoppableHolder_Leaving");
+			}
+			else
+			{
+				_choppableHolderAnimation.Play("ChoppableHolder_Leaving");
+				// NEED TO SET THE GRAPHICS ON THE ENTERING CHOPPABLE BEFORE THE ANIMATION BEGINS
+				_choppableHolderAnimation.PlayQueued("ChoppableHolder_Entering");
+			}
+
 			_debugText.text = "";
 			_onTransitionStart?.Invoke();
 		}

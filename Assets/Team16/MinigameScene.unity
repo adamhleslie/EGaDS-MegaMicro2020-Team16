@@ -253,6 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 423807915}
+  - component: {fileID: 423807916}
   m_Layer: 5
   m_Name: ChoppableHolder
   m_TagString: Untagged
@@ -279,9 +280,26 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -98}
+  m_AnchoredPosition: {x: 830, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!111 &423807916
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423807914}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 331eefb8b8f5bf84096a80c3e3702d74, type: 2}
+  - {fileID: 7400000, guid: 126c4171859d8bd4c88a43d14170fce2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &451443546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,9 +1083,10 @@ MonoBehaviour:
   _debugText: {fileID: 176157730}
   _choppableObjects: {fileID: 11400000, guid: 65e1c30234137bc45925cea5da0e2cd7, type: 2}
   _numberOfChoppables: 3
-  _timerLength: 2
+  _timerLength: 1.5
   _transitionTimerLength: 0.5
   _chopTimerLength: 0.5
+  _choppableHolderAnimation: {fileID: 423807916}
   _onTransitionStart:
     m_PersistentCalls:
       m_Calls: []
