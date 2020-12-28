@@ -15,6 +15,8 @@ namespace Team16
 		[SerializeField]
 		private Text _debugText;
 		[SerializeField]
+		private HelperText _helperText;
+		[SerializeField]
 		private ChoppableObjectCollection _choppableObjects;
 		[SerializeField]
 		private int _numberOfChoppables;
@@ -159,6 +161,7 @@ namespace Team16
 		#region Visuals
 		private void OnTransitionStart()
 		{
+			_helperText.SetTextActive(false);
 			_debugText.text = "";
 			_onTransitionStart?.Invoke();
 		}
@@ -207,6 +210,13 @@ namespace Team16
 
 		private void UpdateChoppable()
 		{
+			string helperText = _usedObjects[_currentIndex].GetRandomHelperText();
+			if (helperText != null)
+			{
+				_helperText.SetText(helperText);
+				_helperText.SetTextActive(true);
+			}
+
 			DisplayChoppableObject(_usedObjects[_currentIndex], false);
 			_choppableText.text = _usedObjects[_currentIndex].name;
 		}
