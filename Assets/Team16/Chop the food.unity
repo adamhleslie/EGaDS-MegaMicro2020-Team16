@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 140978514}
   - component: {fileID: 140978513}
   - component: {fileID: 140978512}
+  - component: {fileID: 140978515}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -250,6 +251,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140978510}
   m_CullTransparentMesh: 0
+--- !u!111 &140978515
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140978510}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 1b1cd67884afd31438b946effd9404bb, type: 2}
+  - {fileID: 7400000, guid: aa0decb44e403f444ab0c989b5945a2c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &176157729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1185,7 @@ MonoBehaviour:
   - {fileID: 1056077795}
   - {fileID: 30208117}
   _text: {fileID: 140978513}
+  _textAnimation: {fileID: 140978515}
 --- !u!1 &1056077794
 GameObject:
   m_ObjectHideFlags: 0

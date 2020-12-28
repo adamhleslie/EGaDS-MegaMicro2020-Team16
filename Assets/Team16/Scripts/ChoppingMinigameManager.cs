@@ -65,11 +65,6 @@ namespace Team16
 				return;
 			}
 
-			foreach (ChoppableObject choppableObject in _usedObjects)
-			{
-				Debug.Log($"Choppable object: {choppableObject.name}");
-			}
-
 			MinigameManager.Instance.minigame.gameWin = true;
 			_currentIndex = -1;
 			StartCoroutine(TransitionCoroutine());

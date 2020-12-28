@@ -11,8 +11,16 @@ namespace Team16
 		private RectTransform[] _textHolders;
 		[SerializeField]
 		private Text _text;
+		[SerializeField]
+		private Animation _textAnimation;
 
 		private int _currentIndex = -1;
+		private bool _active;
+
+		void Awake()
+		{
+			SetTextActiveInternal(false, true);
+		}
 
 		public void SetText(string text)
 		{
@@ -42,7 +50,39 @@ namespace Team16
 
 		public void SetTextActive(bool active)
 		{
-			_text.gameObject.SetActive(active);
+			if (_active == active)
+			{
+				return;
+			}
+
+			SetTextActiveInternal(active, false);
+			_active = active;
+		}
+
+		private void SetTextActiveInternal(bool active, bool instant)
+		{
+			if (active)
+			{
+				if (instant)
+				{
+					_text.transform.localScale = Vector3.one;
+				}
+				else
+				{
+					_textAnimation.Play("Text_PopIn");
+				}
+			}
+			else
+			{
+				if (instant)
+				{
+					_text.transform.localScale = Vector3.zero;
+				}
+				else
+				{
+					_textAnimation.Play("Text_PopOut");
+				}
+			}
 		}
 	}
 }
