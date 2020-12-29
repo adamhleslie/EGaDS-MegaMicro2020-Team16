@@ -15,9 +15,8 @@ MonoBehaviour:
   _shouldBeChopped: 1
   _beforeChop: {fileID: 21300000, guid: 331b194a22fa09d4187c3ae1b368e9fb, type: 3}
   _afterChop: {fileID: 21300000, guid: 61506ad02604f2a44b8d7f4eacd9d8a8, type: 3}
-  _beforeChopAnimatorState: Base Layer.ZomBEE
   _helperText:
   - Kill it!
-  - DIEEEE!!!
+  - DIE ZOMBEE!
   _customLoseSound: 
   _customLoseText: 

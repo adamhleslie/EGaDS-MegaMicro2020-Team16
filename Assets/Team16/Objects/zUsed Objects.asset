@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choppableObjects:
   - ChoppableObject: {fileID: 11400000, guid: ba236dcfea6f8b2419d74dae188a3962, type: 2}
-    Probability: 1.25
+    Probability: 1
   - ChoppableObject: {fileID: 11400000, guid: 29b0469b5376c25499ef57b408a3793a, type: 2}
     Probability: 0.25
   - ChoppableObject: {fileID: 11400000, guid: 84e3e164b6eb86447a04fa5ee5dacce8, type: 2}
-    Probability: 0.75
+    Probability: 1
   - ChoppableObject: {fileID: 11400000, guid: cdf5e16c73c5bdb49b6fdea62d262210, type: 2}
     Probability: 0.5
   - ChoppableObject: {fileID: 11400000, guid: e8c8ac13f00ddd645aa24f428e6d6919, type: 2}
-    Probability: 0.75
+    Probability: 1
   - ChoppableObject: {fileID: 11400000, guid: d37212c353f559c419b5c58ae04f5838, type: 2}
-    Probability: 0.75
+    Probability: 1
   - ChoppableObject: {fileID: 11400000, guid: eb90dc22f1ea8f143acfbe5cd69a542d, type: 2}
     Probability: 0.5
