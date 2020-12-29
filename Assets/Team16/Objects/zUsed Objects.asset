@@ -25,3 +25,5 @@ MonoBehaviour:
     Probability: 0.75
   - ChoppableObject: {fileID: 11400000, guid: d37212c353f559c419b5c58ae04f5838, type: 2}
     Probability: 0.75
+  - ChoppableObject: {fileID: 11400000, guid: eb90dc22f1ea8f143acfbe5cd69a542d, type: 2}
+    Probability: 1
