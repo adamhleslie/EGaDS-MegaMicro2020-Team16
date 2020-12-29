@@ -17,3 +17,6 @@ MonoBehaviour:
   _afterChop: {fileID: 21300000, guid: b1c2c236f0d3c7441a5471c9ff0b9e76, type: 3}
   _helperText:
   - Refreshing!
+  - Zesty!
+  _customLoseSound: 
+  _customLoseText: 
