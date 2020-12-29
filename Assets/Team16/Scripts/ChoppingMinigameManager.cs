@@ -50,6 +50,8 @@ namespace Team16
 		private ChoppableObject _beeObject;
 		[SerializeField]
 		private string _defaultLoseText;
+		[SerializeField]
+		private string _defaultChoppableAnimatorState;
 
 		[SerializeField]
 		private UnityEvent _onTransitionStart;
@@ -282,10 +284,24 @@ namespace Team16
 			{
 				if (chopped)
 				{
+					// Unused animation stuff, didn't make the cut
+					//image.GetComponent<Animator>().enabled = false;
 					image.sprite = choppableObject.AfterChop;
 				}
 				else
 				{
+					// Unused animation stuff, didn't make the cut
+					//if (!string.IsNullOrWhiteSpace(choppableObject.BeforeChopAnimatorState))
+					//{
+					//	image.GetComponent<Animator>().enabled = true;
+					//	image.GetComponent<Animator>().Play(choppableObject.BeforeChopAnimatorState);
+					//}
+					//else
+					//{
+					//	image.GetComponent<Animator>().enabled = false;
+					//	image.sprite = choppableObject.BeforeChop;
+					//}
+
 					image.sprite = choppableObject.BeforeChop;
 				}
 			}

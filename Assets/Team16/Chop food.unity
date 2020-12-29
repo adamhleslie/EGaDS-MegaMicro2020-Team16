@@ -1144,6 +1144,7 @@ GameObject:
   - component: {fileID: 451443547}
   - component: {fileID: 451443549}
   - component: {fileID: 451443548}
+  - component: {fileID: 451443550}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1167,7 +1168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 21, y: -13}
   m_SizeDelta: {x: 500, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &451443548
@@ -1207,6 +1208,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451443546}
   m_CullTransparentMesh: 0
+--- !u!95 &451443550
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451443546}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c961504c4629a964386f44719777e03e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &495795687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,6 +2632,7 @@ GameObject:
   - component: {fileID: 1283896189}
   - component: {fileID: 1283896191}
   - component: {fileID: 1283896190}
+  - component: {fileID: 1283896192}
   m_Layer: 5
   m_Name: Shadow
   m_TagString: Untagged
@@ -2675,6 +2696,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283896188}
   m_CullTransparentMesh: 0
+--- !u!95 &1283896192
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283896188}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c961504c4629a964386f44719777e03e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1534850573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,6 +3523,7 @@ MonoBehaviour:
   - win_4
   _beeObject: {fileID: 11400000, guid: ba236dcfea6f8b2419d74dae188a3962, type: 2}
   _defaultLoseText: No!
+  _defaultChoppableAnimatorState: Base Layer.Default
   _onTransitionStart:
     m_PersistentCalls:
       m_Calls: []
